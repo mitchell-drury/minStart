@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
 
-export default class Main extends Component {
+export default class Navbar extends Component {
     constructor () {
-        super ();
+        super()
     }
 
     render () {
         return (
             <div>
-                <h1> This is the main </h1>
-                <Kingdoms />
+                This is navbar.
             </div>
         )
     }
 }
+
+//module.exports = {Navbar};

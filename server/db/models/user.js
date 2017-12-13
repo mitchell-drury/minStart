@@ -27,15 +27,10 @@ const User = db.define('user', {
   salt: {
     type: Sequelize.STRING
   },
-  googleId: {
-    type: Sequelize.STRING
-  },
   isLoggedIn:{
     type: Sequelize.BOOLEAN
   }
 })
-
-module.exports = User
 
 User.prototype.correctPassword = function (candidatePwd) {
   return User.encryptPassword(candidatePwd, this.salt) === this.password
@@ -62,3 +57,5 @@ const setSaltAndPassword = user => {
 
 User.beforeCreate(setSaltAndPassword)
 User.beforeUpdate(setSaltAndPassword)
+
+module.exports = User

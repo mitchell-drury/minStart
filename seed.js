@@ -1,5 +1,5 @@
-const db = require('./server/db');
-const {User} = require('./server/db/models');
+const db = require('./server/db/db.js');
+const {User} = require('./server/db/models/models.js');
 
 const users = [
   {

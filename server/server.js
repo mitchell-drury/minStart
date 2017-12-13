@@ -3,7 +3,7 @@ const path = require('path');
 const session = require('session');
 const socketio = require('socket.io');
 const morgan = require('morgan');
-const db = require('./db');
+const db = require('./db/db.js');
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -15,12 +15,12 @@ app.get('*', function (req, res, next) {
     res.status(200).send('../public/index.html');
 })
 
-app.use('/api', require('./routes'));
+//app.use('/api', require('./routes/apiroutes.js'));
 
 const server = app.listen(port, () => {
-    console.log('Planet Earth')
+    console.log('The server is running')
     db.sync({force:true})
   });
 const io = socketio(server);
 
-require('../socket/socket.js')(io);
+require('./serverSocket.js')(io);
