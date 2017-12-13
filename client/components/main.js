@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import {Kingdoms} from './kingdoms';
 
 export default class Main extends Component {
     constructor () {

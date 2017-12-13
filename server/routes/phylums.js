@@ -1,9 +1,9 @@
 const router = require('express').Router()
-const {Phylum} = require('../db/models')
+const {User} = require('../db/models')
 
-router.get('/phylums', function(req,res,next){
-    Phylum.findAll()
-    .then(phylums => res.json(phylums))
+router.get('/users', function(req,res,next){
+    User.findAll()
+    .then(users => res.json(users))
     .catch(next)
 })
 
